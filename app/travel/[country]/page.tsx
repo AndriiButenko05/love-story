@@ -5,20 +5,7 @@ import { motion } from "framer-motion";
 type EaseCurve = [number, number, number, number];
 const EASE: EaseCurve = [0.25, 0.46, 0.45, 0.94];
 
-const MEMORY_LABELS = [
-  "Наше особенное утро",
-  "Улыбка, которую я обожаю",
-  "Моменты счастья",
-  "Вместе сквозь время",
-  "Твой смех",
-  "Прогулки за руку",
-  "Лучший день",
-  "Люблю тебя",
-  "Наш вечер",
-  "Просто мы",
-  "Незабываемо",
-  "В моем сердце",
-];
+const MEMORY_LABELS = ["🩷"];
 
 // 1. ДОБАВЛЯЕМ СВОЙСТВО photoCount ДЛЯ КАЖДОЙ СТРАНЫ
 const COUNTRY_DATA: Record<
