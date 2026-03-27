@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Моя Королева 👑",
+  title: "Наша история любви",
   description: "Наша история любви",
 };
 
