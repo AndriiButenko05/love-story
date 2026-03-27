@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Poppins:wght@300;400;500;600&display=swap");
+@import "tailwindcss";
+/* === THEME === */
+@theme {
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Poppins", sans-serif;
+
+  --color-pink: #ff4d6d;
+  --color-pink-light: #ff85a1;
+  --color-pink-pale: #ffd6e0;
+  --color-red: #c9184a;
+  --color-red-deep: #800f2f;
+  --color-cream: #fff0f3;
+}
+
+/* === BASE === */
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #fff0f3;
+  color: #3d0019;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Playfair Display", serif;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #ffd6e0;
+}
+::-webkit-scrollbar-thumb {
+  background: #ff4d6d;
+  border-radius: 3px;
+}
+
+/* === UTILITIES === */
+.glass {
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.btn-glow {
+  box-shadow:
+    0 0 20px rgba(255, 77, 109, 0.45),
+    0 0 40px rgba(255, 77, 109, 0.2);
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.2s ease;
+}
+.btn-glow:hover {
+  box-shadow:
+    0 0 32px rgba(255, 77, 109, 0.65),
+    0 0 64px rgba(255, 77, 109, 0.3);
+  transform: scale(1.04);
+}
+
+/* Animated gradient background */
+.bg-romantic {
+  background: linear-gradient(
+    135deg,
+    #fff0f3 0%,
+    #ffd6e0 30%,
+    #ffb3c6 60%,
+    #ffd6e0 80%,
+    #fff0f3 100%
+  );
+  background-size: 400% 400%;
+  animation: gradient-shift 12s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Floating hearts */
+@keyframes float-heart {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-10deg) scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-18px) rotate(10deg) scale(1.12);
+    opacity: 1;
+  }
+}
+.float-heart {
+  animation: float-heart 3s ease-in-out infinite;
+}
+
+/* Photo shine overlay on hover */
+.photo-shine {
+  position: relative;
+  overflow: hidden;
+}
+.photo-shine::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -75%;
+  width: 50%;
+  height: 200%;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.32),
+    transparent
+  );
+  transform: skewX(-20deg);
+  transition: left 0.55s ease;
+}
+.photo-shine:hover::after {
+  left: 125%;
+}
